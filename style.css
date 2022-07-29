@@ -1,0 +1,500 @@
+/*********************************************
+GLOBAL STYLE
+*************/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #111;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*********************************************
+NAVBAR STYLE
+*************/
+
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 100000;
+}
+#header .header {
+  min-height: 8vh;
+}
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 40px 100px;
+  transition: 0.5s;
+}
+#header .nav-bar.sticky{
+    padding: 0px 100px;
+    background: #fff;
+}
+#header .nav-bar .brand{
+    font-size: 3rem;
+    color:white;
+}
+#header .nav-bar.sticky .brand{
+    font-size: 2rem;
+    color:black;
+}
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-image: url(images/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+  left: 0%;
+}
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+#header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: crimson;
+  opacity: 1;
+  font-size: 8rem;
+  letter-spacing: 50px;
+  z-index: -10000;
+  transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+  color: black;
+}
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(0.8);
+  margin-right: 20px;
+}
+#header .nav-bar.sticky .hamburger {
+    border: 3px solid black;
+  }
+#header .hamburger:after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: hamburger_puls 1s ease infinite;
+}
+#header .nav-bar.sticky .hamburger:after {
+    border: 3px solid black;
+  }
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+#header .nav-bar.sticky .hamburger .bar {
+    background-color: black;
+  }
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .nav-bar.sticky .hamburger .bar::after,
+#header .nav-bar.sticky .hamburger .bar::before {
+  background-color: black;
+}
+#header .hamburger .bar::after {
+  top: 8px;
+}
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+  bottom: 0;
+}
+#header .hamburger.active .bar::after {
+  top: 0;
+}
+
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform:scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+/*********************************************
+SECTİON-ONE STYLE
+*************/
+
+main #section-one{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+main #section-one:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom,#111,transparent);
+    z-index: 1000;
+}
+main #section-one:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top,#111,transparent);
+    z-index: 10000;
+}
+main #section-one .img-one img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.7;
+    object-fit: cover;
+}
+main #section-one .content-one{
+    position: relative;
+    max-width: 900px;
+    text-align: center;
+}
+main .content-one h2{
+    color: #fff;
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+}
+main .content-one p{
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+main .content-one #btn-one{
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    background: rgba(250, 60, 60, 0.9);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+main .content-one #btn-one:hover{
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    background: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+/*********************************************
+SECTİON-TWO STYLE
+*************/
+
+#section-two{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+#section-two::before{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#111,transparent);
+}
+#section-two:after{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top,#111,transparent);
+}
+
+#section-two .content-two{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: right;
+    padding: 0 2% 0 5%;
+}
+#section-two .content-two h2{
+    color: #fff;
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+}
+#section-two .content-two p{
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+#section-two .img-two{
+    width: 50%;
+    height: 60vh;
+}
+#section-two .img-two img{
+    padding-right: 10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*********************************************
+SECTİON-THREE STYLE
+*************/
+
+#section-three{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#section-three:before{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#111,transparent);
+    z-index: 10;
+}
+#section-three:after{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top,#111,transparent);
+    z-index: 10;
+}
+#section-three .img-three{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#section-three .img-three img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+/*********************************************
+SECTİON-FOR STYLE
+*************/
+
+#section-for{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section-for .cards{
+    width: 84%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#section-for .card{
+    width: 100%;
+    height: 100%;
+    margin: 5% 2%;
+    background: rgba(53, 51, 51, 0.5);
+}
+#section-for .card .img{
+    width: 100%;
+    height: 85%;
+}
+#section-for .card .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#section-for .card .content{
+    margin-top: 10px;
+    text-align: center;
+}
+#section-for .card .content h2{
+    color: #fff;
+    text-transform: capitalize;
+}
+#section-for .card .content h5{
+    margin-top: 5px;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+/*********************************************
+SECTİON-FİVE STYLE
+*************/
+
+#section-five{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#section-five:before{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#111,transparent);
+    z-index: 10;
+}
+#section-five:after{
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top,#111,transparent);
+    z-index: 10;
+}
+#section-five .img-five{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#section-five .img-five img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/*********************************************
+SECTİON-SİX STYLE
+*************/
+
+#section-six{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section-six .contact{
+    width: 60%;
+    height: 30%;   
+}
+#section-six .contact .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    padding: 25px 10px;
+}
+#section-six .contact .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    color: #fff;  
+    letter-spacing: 3px;
+}
+#section-six .contact .copyright span{
+    color: rgb(91, 91, 92); 
+    font-size: 20px; 
+    padding: 3px;
+    letter-spacing: 3px;
+}
+#section-six .contact .icons .icon i{  
+    font-size: 50px;
+    padding: 10px 50px;
+    color: #fff;
+}

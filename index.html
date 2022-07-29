@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    LOGO
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="#hero" data-after="Home">Home</a></li>
+                        <li><a href="#services" data-after="Service">Services</a></li>
+                        <li><a href="#projects" data-after="Projects">Projects</a></li>
+                        <li><a href="#about" data-after="About">About</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="section-one">
+            <div class="img-one">
+                <img src="images/banner.jpg" alt="">
+            </div>
+            <div class="content-one">
+                <h2>Lorem ipsum dolor sit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, incidunt saepe voluptatibus quo quidem corporis, modi amet aspernatur accusamus ipsum sapiente inventore esse ducimus voluptas.
+                </p>
+                <a href="#" id="btn-one">Learn More</a>
+            </div>
+        </section>
+        <section id="section-two">
+            <div class="content-two">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ducimus officia libero odit repudiandae ipsum, quas deserunt nostrum nam. Numquam consectetur dicta ut sapiente blanditiis repudiandae, molestiae illum libero hic quia earum
+                    cum facilis nam molestias error, sunt officiis provident! Expedita modi cum corporis mollitia sequi iste quaerat hic, facilis fugiat saepe iusto voluptatum maxime sed, debitis explicabo unde placeat vero. Sit illum libero laboriosam
+                    tempora asperiores corporis neque sint sequi reiciendis, recusandae molestiae laborum, dolorem, assumenda possimus error. Ut animi, earum totam, adipisci reprehenderit fugiat ex harum eveniet dolore suscipit nihil quam labore doloribus
+                    maiores, dicta architecto.
+                </p>
+            </div>
+            <div class="img-two">
+                <img src="images/img1.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="section-three">
+            <div class="img-three">
+                <img src="images/banner2.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="section-for">
+
+            <div class="cards">
+                <div id="card-one" class="card ">
+                    <div class="img">
+                        <a href=""><img src="images/destination1.jpg" alt=""></a>
+                    </div>
+                    <div class="content">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <h5>Country Name</h5>
+                    </div>
+                </div>
+
+                <div id="card-two" class="card">
+                    <div class="img">
+                        <a href=""><img src="images/destination2.jpg" alt=""></a>
+                    </div>
+                    <div class="content">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <h5>Country Name</h5>
+                    </div>
+                </div>
+
+                <div id="card-three" class="card">
+                    <div class="img">
+                        <a href=""><img src="images/destination3.jpg" alt=""></a>
+                    </div>
+                    <div class="content">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <h5>Country Name</h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="section-five">
+            <div class="img-five">
+                <img src="images/banner3.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="section-six">
+            <div class="contact">
+                <div class="icons">
+                    <div class="icon">
+                        <i class='bx bxl-facebook'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-whatsapp'></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h5>© 2021 <span> Office</span> Elektronik Hiz. ve Tic. A.Ş. Tüm Hakları saklıdır.</h5>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <section></section>
+    </footer>
+</body>
+
+
+<!-- STICKY AND FULL PAGE NAVBAR USE SCRİPT START -->
+<script src="app.js"></script>
+<script type="text/javascript">
+    window.addEventListener("scroll", function() {
+        var navbar = document.querySelector(".nav-bar");
+        navbar.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+<!-- STICKY AND FULL PAGE NAVBAR USE SCRİPT END -->
+
+<!-- HAS USE SCRİPT START -->
+<script>
+    $(function() {
+        $(".tikla").click(function() {
+            if ($(".nav-two ul").hasClass("ridvan")) {
+                $(".nav-two ul").removeClass("ridvan");
+                $(".nav-two ul").css({
+                    left: '100%',
+                });
+            } else {
+                $(".nav-two ul").addClass("ridvan");
+                $(".nav-two ul").css({
+                    left: 0
+                });
+            }
+        });
+    });
+</script>
+<!-- HAS USE SCRİPT END -->
+
+<!-- ANİMATİON SCROLL REVEAL USE SCRİPT START -->
+<script>
+    window.sr = ScrollReveal();
+
+    sr.reveal(".img-two", {
+        origin: 'right',
+        duration: 1000,
+        distance: '25rem',
+        delay: 300,
+        reset: true
+    });
+    sr.reveal(".content-two", {
+        origin: 'left',
+        duration: 1000,
+        distance: '25rem',
+        delay: 400
+    });
+    sr.reveal("#card-one", {
+        origin: 'bottom',
+        duration: 1500,
+        distance: '25rem'
+    });
+    sr.reveal("#card-two", {
+        origin: 'top',
+        duration: 1500,
+        distance: '25rem',
+        delay: 400
+    });
+    sr.reveal("#card-three", {
+        origin: 'bottom',
+        duration: 1500,
+        distance: '25rem',
+        delay: 400
+    });
+</script>
+<script>
+    ScrollReveal().reveal('.headline');
+</script>
+<!-- ANİMATİON SCROLL REVEAL USE SCRİPT END -->
+
+</html>
